@@ -17,7 +17,7 @@ def _get_api_key():
     return WEATHER_API_KEY
 
 
-def build_weather_query(city_input, imperial=False):
+def build_weather_query(city_input, measurement_unit):
     """Builds the URL for an API request to OpenWeather's weather API.
 
     Args:
@@ -29,8 +29,8 @@ def build_weather_query(city_input, imperial=False):
     """
     api_key = _get_api_key()
 
-    units = "imperial" if imperial else "metric"
-    url = f"{BASE_WEATHER_API_URL}?q={city_input}&units={units}&appid={api_key}"
+    # units = "imperial" if imperial else "metric"
+    url = f"{BASE_WEATHER_API_URL}?q={city_input}&units={measurement_unit}&appid={api_key}"
 
     return url
 

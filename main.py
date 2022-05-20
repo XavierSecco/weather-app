@@ -9,9 +9,9 @@ def display_weather_info():
     if (content_type == 'application/json'):
         json_data = request.get_json()
         city_input = json_data["city"]
-        imperial = json_data["imperial"]
+        measurement_unit = json_data["imperial"]
 
-        url = build_weather_query(city_input, imperial)
+        url = build_weather_query(city_input, measurement_unit)
         weather_data = get_weather_data(url)
 
         return weather_data
