@@ -48,4 +48,4 @@ def get_weather_data(query_url):
     response = requests.get(query_url)
     data = json.loads(response.text)
     
-    return {"main": data["main"], "weather": data["weather"][0]}
+    return {"main": data["main"], "weather": data["weather"][0], "wind": data["wind"], "name": data["name"]}
